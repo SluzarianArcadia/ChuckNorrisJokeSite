@@ -23,8 +23,6 @@ async function getAPIChuckNorrisSearch(){
     try {
 
     var e = document.getElementById("search").value;
-    console.log(e.length)
-
     if (e.length === 0){
         var joke = msgContainer.appendChild(document.createElement("li"));
         joke.innerHTML = "No input in search field";
@@ -35,15 +33,15 @@ async function getAPIChuckNorrisSearch(){
     var joke = await  fetch('https://api.chucknorris.io/jokes/search?query='+e,{ method: 'GET',}) 
     .then(response => response.json())
 
-joke.result.forEach(element => {
-    var joke = msgContainer.appendChild(document.createElement("li"));
-    joke.innerHTML = element.value
-});
+    joke.result.forEach(element => {
+        var joke = msgContainer.appendChild(document.createElement("li"));
+        joke.innerHTML = element.value
+    });
 
-if (joke.total === 0){
-    var joke = msgContainer.appendChild(document.createElement("li"));
-    joke.innerHTML = "Not everything is funny... no jokes for this word, sorry.";
-}
-document.getElementById("jokeSearch").replaceChildren(msgContainer);
-    } catch (error) {console.log(error)}
+    if (joke.total === 0){
+        var joke = msgContainer.appendChild(document.createElement("li"));
+        joke.innerHTML = "Not everything is funny... no jokes for this word, sorry.";
+    }
+    document.getElementById("jokeSearch").replaceChildren(msgContainer);
+        } catch (error) {console.log(error)}
 }
