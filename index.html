@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <title>Chuck Norris Jokes!</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Random Chuck Norris Joke Website</h1>
+        <div class="grid">
+            <h2>The joke: </h2>
+            <button onclick="getAPIChuckNorrisRandom()">Get Random Joke</button>
+        </div>
+        <br>
+      <h4 id="jokeRandom"></h4>
+
+      <hr>
+
+      <h2>Need to hear a random Chuck Norris joke but from a specific category? You are in luck choose your category below:</h2>
+        <summary aria-haspopup="listbox">Chunk Norris Joke Category</summary>
+        <select id="categorySelector">
+            <option value="animal">Animal      </option>
+            <option value="career">Career      </option>
+            <option value="celebrity">Celebrity</option>
+            <option value="dev">Dev            </option>
+            <option value="explicit">Explicit  </option>
+            <option value="fashion">Fashion    </option>
+            <option value="food">Food          </option>
+            <option value="history">History    </option>
+            <option value="money">Money        </option>
+            <option value="movie">Movie        </option>
+            <option value="music">Music        </option>
+            <option value="political">Political</option>
+            <option value="religion">Religion  </option>
+            <option value="science">Science    </option>
+            <option value="sport">Sport        </option>
+            <option value="travel">Travel      </option>
+        </select>
+
+        <div class="grid">
+            <h2>The categorical joke: </h2>
+            <button onclick="getAPIChunkNorrisCategory()">Get Random Categorical Joke</button>
+        </div>
+        <br>
+      <h4 id="jokeRandomCat"></h4>
+
+      <hr>
+
+      <h2>Seriously, that wasn't enough for you? Well... if that didn't do it I'm not sure what will. Here is a search bar to look up specific words from the joke database. OooOnly used by the not easily pleased among us.</h2>
+
+      <input type="search" id="search" name="search" placeholder="Search">
+      <button onclick="getAPIChuckNorrisSearch()">Get Specific Jokes</button>
+
+      <br>
+      <ul id="jokeSearch"></ul>
+      <hr>
+
+      <footer><cite>Made By Eric Slusarz</cite></footer>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>
